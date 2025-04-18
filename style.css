@@ -1,0 +1,397 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*SCROLLBAR---------------------------------------------------------------------------------------------------*/
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    margin-right: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #232b2b83;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #232b2b;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-horizontal {
+    height: 8px;
+}
+
+/*SCROLLBAR---------------------------------------------------------------------------------------------------*/
+
+/*BODY---------------------------------------------------------------------------------------------------*/
+
+body{
+background-color: #ffff;
+color: #231f20;
+}
+
+/*BODY---------------------------------------------------------------------------------------------------*/
+
+
+/*CARD1---------------------------------------------------------------------------------------------------*/
+
+.card1{
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    font-family: "Inter", serif;
+} 
+
+.card1 > h1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    font-size: 330px;
+    width: 100%; 
+    text-align: justify;
+}
+
+.milan{
+    font-weight: 700;
+    color: #231f20;
+}
+
+.ristic{
+    font-weight: 300;
+    color: #231f20b2;
+}
+
+.card1 > h5 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 18px;
+    margin-bottom: 10px;
+    font-weight: 200;
+    font-size: 50px;
+
+}
+
+.card1 > p {
+    width: 50%;
+    height: 462px;
+    font-size: 35px;
+    font-weight: 200;
+    text-align: justify;
+}
+
+.top-right-images {
+    position: absolute;
+    top: 80px;
+    right: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transform: rotate(5deg);
+}
+
+.top-right-images img {
+    width: 500px;
+    height: 600px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+@media screen and (min-width: 375px) and (max-width: 600px) {
+
+    .card1 {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+  
+    .card1 > p {
+      font-size: 1rem;
+      width: 90%;
+      margin: 1rem;
+    }
+  
+    .top-right-images {
+      position: relative;
+      top: auto;
+      right: auto;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+      transform: rotate(3deg);
+      margin-top: -25rem;
+    }
+  
+    .top-right-images img {
+      width: 50%;
+      height: auto;
+    }
+  
+    .card1 > h1 {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+      padding-left: 1rem;
+      text-align: left;
+    }
+  
+    .card1 > h5 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+  }
+  
+  @media screen and (min-width: 375px) and (height: 812px ) {
+
+    .card1 {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+      }
+    
+      .card1 > p {
+        font-size: 1rem;
+        width: 90%;
+        margin: 1rem;
+      }
+
+    .top-right-images {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        transform: rotate(3deg);
+        margin-top: -30rem;
+
+      }
+    
+      .top-right-images img {
+        width: 50%;
+        height: auto;
+      }
+
+      .card1 > h1 {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+        padding-left: 1rem;
+        text-align: left;
+      }
+    
+      .card1 > h5 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+}
+
+@media screen and (min-width: 376px) and (max-width: 600px) {
+    .card1 {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+  
+    .card1 > p {
+      font-size: 1.2rem;
+      width: 90%;
+      margin: 1rem;
+    }
+  
+    .top-right-images {
+      position: relative;
+      top: auto;
+      right: auto;
+      transform: none;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: -33rem;
+      transform: rotate(3deg);
+    }
+  
+    .top-right-images img {
+      width: 60%;
+      height: auto;
+    }
+  
+    .card1 > h1 {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+      padding-left: 1rem;
+      text-align: left;
+    }
+  
+    .card1 > h5 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 768px) {
+
+    .card1 {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        width: 100%;
+        text-align: center;
+    }
+
+    .card1 > p {
+      width: 100%;
+      font-size: 1.8rem;
+      padding: 1rem;
+    }
+  
+    .card1 > h1 {
+      font-size: 7rem;
+      margin-bottom: 3rem;
+      margin-left: 0;
+      padding-left: 1rem;
+      width: 90%;
+    }
+  
+    .card1 > h5 {
+      font-size: 3rem;
+      margin-bottom: 1.2rem;
+    }
+  
+    .top-right-images {
+        position: relative;
+        top: auto;
+        right: -1rem;
+        width: 90%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: -43rem;
+        transform: rotate(3deg);
+    }
+  
+    .top-right-images img {
+      width: 50%;
+      height: auto;
+    }
+  }
+  
+  @media screen and (min-width: 769px) and (max-width: 820px) {
+
+    .card1 {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+        margin: 0;
+    }
+
+    .card1 > p {
+      width: 100%;
+      font-size: 1.8rem;
+      padding: 1rem;
+    }
+  
+    .card1 > h1 {
+      font-size: 9rem;
+      margin-bottom: 2.5rem;
+      margin-left: 0;
+      padding-left: 1rem;
+    }
+  
+    .card1 > h5 {
+      font-size: 3rem;
+    }
+  
+    .top-right-images {
+        position: relative;
+        top: auto;
+        right: -1rem;
+        width: 90%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: -50rem;
+        transform: rotate(3deg);
+    }
+  
+    .top-right-images img {
+      width: 50%;
+      height: auto;
+    }
+  }
+  
+  @media screen and (min-width: 821px) and (max-width: 1024px) {
+
+    .card1 {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+    }
+
+    .card1 > p {
+      width: 95%;
+      font-size: 2.2rem;
+      padding-top: 1rem;
+    }
+  
+    .card1 > h1 {
+        font-size: 10rem;
+        margin-bottom: 3rem;
+        margin-left: 0;
+        padding-left: 1rem;
+        width: 90%;
+      }
+    
+      .card1 > h5 {
+        font-size: 3rem;
+        margin-bottom: 1.2rem;
+      }
+  
+    .top-right-images {
+        position: relative;
+        top: auto;
+        right: -1rem;
+        width: 90%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: -58rem;
+        transform: rotate(3deg);
+    }
+  
+    .top-right-images img {
+      width: 50%;
+      height: auto;
+    }
+  }  
+  
+  
+  
+  
+
