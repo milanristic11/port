@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Comfortaa:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=News+Cycle:wght@400;700&family=Oxygen+Mono&family=Sono:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body onload = "followMouse();">
+
+  <div class="wrap">
+    <div id="ball"></div>
+</div>
+    <div class="fullscreen-div">
+        <div class="ime-prezime">
+            <span class="ime">Milan </span><span class="prezime">Ristić</span>
+            <div class="dodatni-tekst">
+                design&development
+            </div>
+        </div>
+        <div class="scroll-text">
+            Scroll <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#232b2b" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"/>
+              </svg>
+        </div>
+    </div>
+    <section class="about-section">
+        <div class="about-block">
+          <div class="about-title">O MENI</div>
+          <div class="about-text">
+            <p>
+                Rođen 11. novembra 2002. godine u Smederevu. Trenutno sam student treće godine na Višoj elektrotehničkoj školi, na smeru Nove računarske tehnologije. Strastveno se bavim web dizajnom i razvojem, uživajući u kreiranju modernih i funkcionalnih digitalnih rešenja. Kroz rad na različitim projektima razvijam svoje veštine, trudeći se da svaki sajt koji napravim bude savršena kombinacija estetike i korisničkog iskustva.            
+            </p>
+          </div>
+        </div>
+      
+        <div class="about-block">
+          <div class="about-title">EDUKACIJA</div>
+          <div class="about-text">
+            <p>
+              Akademija tehničko-umetničkih studija <br> <span class="skola"> Visoka škola elektrotehnike i računarstva <br> 2021 - Trenutno</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="about-block">
+            <div class="about-title">VEŠTINE</div>
+            <div class="about-text">
+              <p>
+                 HTML <br>
+                 CSS <br>
+                 FIGMA <br>
+                 ADOBE ILLUSTRATOR <br>
+                 ADOBE PHOTOSHOP <br>
+              </p>
+            </div>
+          </div>
+      </section>
+
+      <div class="marquee">
+        <div class="marquee__inner" aria-hidden="true">
+          <span>PROJEKTI <img src="slike\strelica.png" alt="" class="strelica"></span>
+          <span>PROJEKTI <img src="slike\strelica.png" alt="" class="strelica"></span>
+          <span>PROJEKTI <img src="slike\strelica.png" alt="" class="strelica"></span>
+          <span>PROJEKTI <img src="slike\strelica.png" alt="" class="strelica"></span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="carousel-container"> 
+          <div class="carousel">
+            <div class="card1">
+              <img src="slike\komp.jpg" alt="">
+              <div class="card1-text">
+                <a href="html.html"><p>HTML|CSS</p></a>
+              </div>
+            </div>
+                <div class="card2"> 
+                  <img src="slike\figma.jpg" alt="">
+                  <div class="card2-text">
+                    <a href="figma.html"><p>FIGMA</p></a>
+                  </div>
+                </div>
+                <div class="card3">                   
+                  <img src="slike\illustrator.jpg" alt="">
+                  <div class="card3-text">
+                    <a href="illustrator.html"><p>ADOBE ILLUSTRATOR</p></a>
+                  </div>
+                </div>
+                <div class="card4">
+                  <img src="slike\photoshop.jpg" alt="">
+                  <div class="card4-text">
+                    <a href="photoshop.html"><p>ADOBE PHOTOSHOP</p></a>
+                  </div>
+                </div>
+            </div>
+            <div class="carousel-arrow-container">
+              <div class="carousel-arrow left-arrow" data-aos="zoom-in" data-aos-delay="400" onclick="moveLeft()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+                </svg>
+              </div>
+              
+              <div class="carousel-arrow right-arrow" data-aos="zoom-in" data-aos-delay="300" onclick="moveRight()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                </svg>
+              </div>
+            </div>
+            
+        </div>
+        </div>
+
+        <div class="kontakt">
+          <div class="leva-strana">
+            <span class="kontaktirajteme" data-aos="fade-up" data-aos-duration="3000">
+              kontaktirajte me
+            </span>
+            <span class="email" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="200">email:<span class="emailime"> milanristic469@gmail.com </span></span>
+          </div>
+          <div class="desna-strana">
+            <div class="polaroid" data-aos="fade-left" data-aos-duration="3000">
+            <img src="slike\ja.jpeg" alt="">
+          </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      <script type="text/javascript">
+
+        var $ = document.querySelector.bind(document);
+        var $on = document.addEventListener.bind(document);
+   
+        var xmouse, ymouse;
+        $on('mousemove', function (e) {
+             xmouse = e.clientX || e.pageX;
+             ymouse = e.clientY || e.pageY;
+        });
+   
+        var ball = $('#ball');
+        var x = void 0,
+             y = void 0,
+             dx = void 0,
+             dy = void 0,
+             tx = 0,
+             ty = 0,
+             key = -1;
+   
+        var followMouse = function followMouse() {
+             key = requestAnimationFrame(followMouse);
+   
+             if(!x || !y) {
+                  x = xmouse;
+                  y = ymouse;
+             } else {
+                  dx = (xmouse - x) * 0.125;
+                  dy = (ymouse - y) * 0.125;
+                  if(Math.abs(dx) + Math.abs(dy) < 0.1) {
+                       x = xmouse;
+                       y = ymouse;
+                  } else {
+                       x += dx;
+                       y += dy;
+                  }
+             }
+             ball.style.left = x + 'px';
+             ball.style.top = y + 'px';
+        };
+   
+        </script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="script.js"></script>
+      
+</body>
+</html>

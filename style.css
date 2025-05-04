@@ -1,0 +1,2554 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+#ball {
+    width: 60px;
+    height: 60px;
+    background: none;
+    border: 1px solid grey;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -10px 0 0 -10px;
+    pointer-events: none;
+}
+
+  /*SCROLLBAR---------------------------------------------------------------------------------------------------*/
+
+.container {
+  overflow: scroll;
+  scrollbar-width: none;        
+  -ms-overflow-style: none;     
+}
+
+.container::-webkit-scrollbar {
+  display: none;                
+}
+
+/*SCROLLBAR---------------------------------------------------------------------------------------------------*/
+
+  html, body {
+    height: 100%;
+    width: 100%;
+    font-family: "Inter", serif;
+  }
+
+  .fullscreen-div {
+    height: 100vh;
+    width: 100vw;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #232b2b;
+    font-size: 15rem;
+    text-align: center;
+  }
+
+  @-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+
+  .ime {
+    font-weight: 800;
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  }
+
+  .prezime {
+    color: #232b2bbd;
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  }
+
+  .dodatni-tekst {
+    font-size: 3rem;
+    margin-top: -20px;
+    text-align: left;
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;
+}
+
+.scroll-text {
+    position: absolute;
+    bottom: 20px; /* Razmak od dna ekrana */
+    left: 50%;
+    transform: translateX(-50%); /* Centriranje teksta horizontalno */
+    font-size: 2rem;
+    color: #232b2b;
+    font-weight: 600;
+    -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s both;
+    animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s both;
+}
+
+@-webkit-keyframes focus-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes focus-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  
+@media (max-width: 1024px) {
+    .fullscreen-div {
+      font-size: 10rem;
+      padding: 1rem;
+    }
+
+    .dodatni-tekst {
+        font-size: 3rem;
+        font-weight: 300;
+    }
+  }
+
+  @media (max-width: 820px) {
+    .fullscreen-div {
+      font-size: 8rem;
+      padding: 1rem;
+    }
+
+    .dodatni-tekst {
+        font-size: 3rem;
+        font-weight: 300;
+    }
+
+    .scroll-text {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .bi-bi-arrow-down-circle {
+        width: 16px;
+        height: 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .fullscreen-div {
+      font-size: 8rem;
+      padding: 1rem;
+    }
+
+    .dodatni-tekst {
+        font-size: 3rem;
+        font-weight: 300;
+    }
+
+    .scroll-text {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .bi-bi-arrow-down-circle {
+        width: 16px;
+        height: 16px;
+    }
+  }
+
+  @media  (max-width: 480px) {
+    .fullscreen-div {
+      font-size: 4rem;
+    }
+
+    .dodatni-tekst {
+        font-size: 1.8rem;
+        font-weight: 300;
+        margin-top: -10px;
+    }
+    .scroll-text {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .bi-bi-arrow-down-circle {
+        width: 16px;
+        height: 16px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .fullscreen-div {
+      font-size: 3.5rem;
+    }
+
+    .dodatni-tekst {
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin-top: -10px;
+    }
+
+    .scroll-text {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .bi-bi-arrow-down-circle {
+        width: 16px;
+        height: 16px;
+    }
+  }
+
+  /*O MENI --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 170px 80px;
+    background-color: #b9b3a9;
+  }
+  
+  .about-block {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 120px;
+  }
+  
+  .about-title {
+    flex: 1;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+  
+  .about-text {
+    flex: 4;
+    max-width: 800px;
+  }
+  
+  .about-text p {
+    font-weight: 800;
+    font-size: 23px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+  .skola {
+    font-weight: 500;
+  }
+
+  @media (max-width: 1024px) {
+
+    .about-block {
+      display: flex;
+      gap: 80px;
+      margin-bottom: 120px;
+    }
+    
+    .about-title {
+      flex: 1;
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+    
+    .about-text {
+      flex: 4;
+      max-width: 800px;
+    }
+    
+    .about-text p {
+      font-weight: 800;
+      font-size: 20px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+  
+    .skola {
+      font-weight: 500;
+    }
+  }
+
+  @media (max-width: 1024px) {
+
+    .about-block {
+      display: flex;
+      gap: 80px;
+      margin-bottom: 120px;
+    }
+    
+    .about-title {
+      flex: 1;
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+    
+    .about-text {
+      flex: 4;
+      max-width: 800px;
+    }
+    
+    .about-text p {
+      font-weight: 800;
+      font-size: 20px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+  
+    .skola {
+      font-weight: 500;
+    }
+  }
+
+  @media (max-width: 820px) {
+
+    .about-block {
+      display: flex;
+      gap: 60px;
+      margin-bottom: 120px;
+    }
+    
+    .about-title {
+      flex: 1;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+    
+    .about-text {
+      flex: 4;
+      max-width: 800px;
+    }
+    
+    .about-text p {
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+  
+    .skola {
+      font-weight: 500;
+    }
+  }
+
+
+  @media (max-width: 768px) {
+
+    .about-block {
+      display: flex;
+      gap: 60px;
+      margin-bottom: 120px;
+    }
+    
+    .about-title {
+      flex: 1;
+      font-weight: 600;
+      font-size: 17px;
+      letter-spacing: 1px;
+    }
+    
+    .about-text {
+      flex: 4;
+      max-width: 800px;
+    }
+    
+    .about-text p {
+      font-weight: 800;
+      font-size: 17px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+  
+    .skola {
+      font-weight: 500;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-section {
+        padding: 100px 20px; 
+    }
+
+    .about-block {
+        flex-direction: column; 
+        gap: 15px; 
+        margin-bottom: 40px;
+    }
+
+    .about-title {
+        font-size: 17px; 
+    }
+
+    .about-text p {
+        font-size: 17px; 
+        line-height: 1.4; 
+        text-align: justify;
+    }
+}
+
+@media (max-width: 375px) {
+  .about-section {
+    padding: 100px 20px; 
+}
+
+.about-block {
+    flex-direction: column; 
+    gap: 15px; 
+    margin-bottom: 40px;
+}
+
+.about-title {
+    font-size: 17px; 
+}
+
+.about-text p {
+    font-size: 17px; 
+    line-height: 1.4; 
+    text-align: justify;
+}
+}
+
+/*O MENI-----------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.marquee {
+  position: relative;
+  overflow: hidden;
+  --offset: 20vw;
+  --move-initial: calc(-25% + var(--offset));
+  --move-final: calc(-50% + var(--offset));
+  background-color: #232b2b;
+}
+
+.marquee__inner {
+  width: fit-content;
+  display: flex;
+  position: relative;
+  transform: translate3d(var(--move-initial), 0, 0);
+  animation: marquee 20s linear infinite;
+}
+
+.marquee span {
+  font-size: 7vw;
+  padding: 0 2vw;
+  font-family: "Inter", serif;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.strelica {
+  height: 1em;
+  width: auto;
+  margin-left: 0.5vw;
+  filter: invert(1);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
+}
+
+@media (max-width: 375px) {
+  .marquee span {
+    font-size: 12vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee span {
+    font-size: 14vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee span {
+    font-size: 15vw;
+  }
+}
+
+@media (max-width: 820px) {
+  .marquee span {
+    font-size: 15vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .marquee span {
+    font-size: 15vw;
+  }
+}
+
+/*KARUSEL------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.card {
+  width: 100%;
+  height: 120vh;
+  background: #232b2b;
+  }
+  
+  .carousel-container {
+  position: relative;
+  justify-content: center;
+  width: 1500px;
+  height: 120vh;
+  overflow: hidden;
+  margin-right: 0;
+  margin-left: auto;
+  }
+  
+  .carousel {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 150px;
+  }
+  
+  .card1 {
+    width: 750px;
+    height: 700px;
+    background-color: transparent;
+    color: white;
+    margin-right: 20px;
+    margin-top: 0;
+    flex-shrink: 0;
+    font-size: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+  
+  .card1-text {
+    width: 100%;
+    height: 110px;
+    background: transparent;
+    color: #ffffff;
+    text-shadow: 0 0 20px #232b2b;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "Inter", serif;
+    line-height: 0.2;
+    margin-left: 0px;
+    margin-top: 50px;
+  }
+  
+  .card2-text {
+    width: 100%;
+    height: 110px;
+    background: transparent;
+    color: #ffffff;
+    text-shadow: 0 0 20px #232b2b;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "Inter", serif;
+    line-height: 0.2;
+    margin-left: 0px;
+    margin-top: 50px;
+  }
+  
+  .card3-text {
+    width: 100%;
+    height: 110px;
+    background: transparent;
+    color: #ffffff;
+    text-shadow: 0 0 20px #232b2b;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "Inter", serif;
+    line-height: 0.2;
+    margin-left: 0px;
+    margin-top: 50px;
+  }
+  
+  .card4-text {
+    width: 100%;
+    height: 110px;
+    background: transparent;
+    color: #ffffff;
+    text-shadow: 0 0 20px #232b2b;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "Inter", serif;
+    line-height: 0.2;
+    margin-left: 0px;
+    margin-top: 50px;
+  }
+
+  .card1-text > a > p{ 
+    transition: color 0.4s ease;
+  }
+
+  .card2-text > a > p{ 
+    transition: color 0.4s ease;
+  }
+
+  .card3-text > a > p{ 
+    transition: color 0.4s ease;
+  }
+
+  .card4-text > a > p{ 
+    transition: color 0.4s ease;
+  }
+
+  .card1-text > a > p:hover {
+    color: #0071e3;
+  }
+  
+  .card2-text > a > p:hover {
+    color: #0071e3;
+  }
+
+  .card3-text > a > p:hover {
+    color: #0071e3;
+  }
+
+  .card4-text > a > p:hover {
+    color: #0071e3;
+  }
+
+  .card1 {
+    width: 900px;
+    height: 700px;
+    background-color: transparent;
+    color: white;
+    margin-right: 20px;
+    margin-top: 0;
+    flex-shrink: 0;
+    font-size: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+  
+  .card2 {
+    width: 900px;
+    height: 700px;
+    background-color: transparent;
+    color: white;
+    margin-right: 20px;
+    margin-top: 0;
+    flex-shrink: 0;
+    font-size: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+  
+  .card3 {
+    width: 900px;
+    height: 700px;
+    background-color: transparent;
+    color: white;
+    margin-right: 20px;
+    margin-top: 0;
+    flex-shrink: 0;
+    font-size: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+  
+  .card4 {
+    width: 900px;
+    height: 700px;
+    background-color: transparent;
+    color: white;
+    margin-right: 20px;
+    margin-top: 0;
+    flex-shrink: 0;
+    font-size: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+  
+  
+  .card1 > img {
+    width: 100%;  
+    height: 90%; 
+    object-fit: cover; 
+
+  }  
+  
+  .card2 > img {
+    width: 100%; 
+    height: 90%; 
+    object-fit: cover; 
+
+  }
+  
+  .card3 > img {
+    width: 100%; 
+    height: 90%; 
+    object-fit: cover; 
+
+  }
+  
+  .card4 > img {
+    width: 100%; 
+    height: 90%; 
+    object-fit: cover; 
+
+  }
+  
+  .carousel-arrow-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: 20px;
+  gap: 10px;
+  }
+  
+  .carousel-arrow {
+  position: relative;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  background-color: #707070;
+  color: black;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  font-size: 30px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .carousel-arrow:hover {
+  background-color: rgb(88, 88, 88);
+  }
+  
+  .carousel-arrow > svg {
+  width: 25px;
+  height: 25px;
+  fill: white;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  @media (max-width: 2560px) {
+    .card {
+      width: 100%;
+      height: 150vh;
+    }
+    
+    .carousel-container {
+      width: 95%;
+      height: 150vh;
+    }
+    
+    .carousel {
+      margin-top: 130px;
+    }
+    
+    .card1 {
+      width: 1000px;
+      height: 790px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    
+    .card2 {
+      width: 1000px;
+      height: 790px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+    .card3 {
+      width: 1000px;
+      height: 790px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+    .card4 {
+      width: 1000px;
+      height: 790px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+        
+    .card1 > img {
+      width: 1000px;
+      height: 790px;
+      border-radius: 0;
+    }
+    
+    .card2 > img {
+      width: 1000px;
+      height: 790px;
+      border-radius: 0;
+    }
+    
+    .card3 > img {
+      width: 1000px;
+      height: 790px;
+      border-radius: 0;
+    }
+    
+    .card4 > img {
+      width: 1000px;
+      height: 790px;
+      border-radius: 0;
+    }
+
+    .card1-text {
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 60px;
+    }
+
+    .card2-text {
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 60px;
+    }
+
+    .card3-text {
+      font-size: 60px;              
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 60px;
+    }
+
+    .card4-text {
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 60px;
+    }
+    
+    
+    .carousel-arrow-container {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-top: 60px;
+      margin-right: 20px;
+      gap: 10px;
+    }
+    
+    .carousel-arrow {
+      position: relative;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      background-color: #707070;
+      color: black;
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      font-size: 30px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .carousel-arrow:hover {
+      background-color: rgb(88, 88, 88);
+    }
+    
+    .carousel-arrow > svg {
+      width: 60px;
+      height: 60px;
+      fill: white;
+    }
+  }
+
+  
+
+  @media (max-width: 1920px) {
+    .card {
+      width: 100%;
+      height: 150vh;
+    }
+    
+    .carousel-container {
+      width: 95%;
+      height: 150vh;
+    }
+    
+    .carousel {
+      margin-top: 130px;
+    }
+    
+    .card1 {
+      width: 800px;
+      height: 690px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    
+    .card2 {
+      width: 800px;
+      height: 690px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+    .card3 {
+      width: 800px;
+      height: 690px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+    .card4 {
+      width: 800px;
+      height: 690px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+        
+    .card1 > img {
+      width: 800px;
+      height: 690px;
+      border-radius: 0;
+    }
+    
+    .card2 > img {
+      width: 800px;
+      height: 690px;
+      border-radius: 0;
+    }
+    
+    .card3 > img {
+      width: 800px;
+      height: 690px;
+      border-radius: 0;
+    }
+    
+    .card4 > img {
+      width: 800px;
+      height: 690px;
+      border-radius: 0;
+    }
+
+    .card1-text {
+      font-size: 45px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 40px;
+    }
+
+    .card2-text {
+      font-size: 45px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 40px;
+    }
+
+    .card3-text {
+      font-size: 45px;              
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 40px;
+    }
+
+    .card4-text {
+      font-size: 45px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 40px;
+    }
+    
+    
+    .carousel-arrow-container {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-top: 20px;
+      margin-right: 20px;
+      gap: 10px;
+    }
+    
+    .carousel-arrow {
+      position: relative;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      background-color: #707070;
+      color: black;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      font-size: 30px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .carousel-arrow:hover {
+      background-color: rgb(88, 88, 88);
+    }
+    
+    .carousel-arrow > svg {
+      width: 50px;
+      height: 50px;
+      fill: white;
+    }
+  }
+
+  @media (max-width: 1366px) {
+    .card {
+      width: 100%;
+      height: 150vh;
+    }
+    
+    .carousel-container {
+      width: 95%;
+      height: 150vh;
+    }
+    
+    .carousel {
+      margin-top: 130px;
+    }
+    
+    .card1 {
+      width: 600px;
+      height: 540px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    
+    .card2 {
+      width: 600px;
+      height: 540px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+    .card3 {
+      width: 600px;
+      height: 540px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+    .card4 {
+      width: 600px;
+      height: 540px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+        
+    .card1 > img {
+      width: 600px;
+      height: 540px;
+      border-radius: 0;
+    }
+    
+    .card2 > img {
+      width: 600px;
+      height: 540px;
+      border-radius: 0;
+    }
+    
+    .card3 > img {
+      width: 600px;
+      height: 540px;
+      border-radius: 0;
+    }
+    
+    .card4 > img {
+      width: 600px;
+      height: 540px;
+      border-radius: 0;
+    }
+
+    .card1-text {
+      font-size: 45px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 40px;
+    }
+
+    .card2-text {
+      font-size: 45px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 40px;
+    }
+
+    .card3-text {
+      font-size: 45px;              
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 40px;
+    }
+
+    .card4-text {
+      font-size: 45px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 40px;
+    }
+    
+    
+    .carousel-arrow-container {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-top: 20px;
+      margin-right: 20px;
+      gap: 10px;
+    }
+    
+    .carousel-arrow {
+      position: relative;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      background-color: #707070;
+      color: black;
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      font-size: 30px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .carousel-arrow:hover {
+      background-color: rgb(88, 88, 88);
+    }
+    
+    .carousel-arrow > svg {
+      width: 40px;
+      height: 40px;
+      fill: white;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .card {
+      width: 100%;
+      height: 100vh;
+    }
+    
+    .carousel-container {
+      width: 95%;
+      height: 90vh;
+    }
+    
+    .carousel {
+      margin-top: 130px;
+    }
+    
+    .card1 {
+      width: 650px;
+      height: 590px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    
+    .card2 {
+      width: 650px;
+      height: 590px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+    .card3 {
+      width: 650px;
+      height: 590px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+    .card4 {
+      width: 650px;
+      height: 590px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+        
+    .card1 > img {
+      width: 650px;
+      height: 590px;
+      border-radius: 0;
+    }
+    
+    .card2 > img {
+      width: 650px;
+      height: 590px;
+      border-radius: 0;
+    }
+    
+    .card3 > img {
+      width: 650px;
+      height: 590px;
+      border-radius: 0;
+    }
+    
+    .card4 > img {
+      width: 650px;
+      height: 590px;
+      border-radius: 0;
+    }
+
+    .card1-text {
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 40px;
+    }
+
+    .card2-text {
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 40px;
+    }
+
+    .card3-text {
+      font-size: 50px;              
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 40px;
+    }
+
+    .card4-text {
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 40px;
+    }
+    
+    
+    .carousel-arrow-container {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-top: 20px;
+      margin-right: 20px;
+      gap: 10px;
+    }
+    
+    .carousel-arrow {
+      position: relative;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      background-color: #707070;
+      color: black;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      font-size: 30px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .carousel-arrow:hover {
+      background-color: rgb(88, 88, 88);
+    }
+    
+    .carousel-arrow > svg {
+      width: 50px;
+      height: 50px;
+      fill: white;
+    }
+    }
+
+  @media (max-width: 820px) {
+    .card {
+      width: 100%;
+      height: 100vh;
+    }
+    
+    .carousel-container {
+      width: 95%;
+      height: 90vh;
+    }
+    
+    .carousel {
+      margin-top: 130px;
+    }
+    
+    .card1 {
+      width: 500px;
+      height: 490px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    
+    .card2 {
+      width: 500px;
+      height: 490px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+    .card3 {
+      width: 500px;
+      height: 490px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+    .card4 {
+      width: 500px;
+      height: 490px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+        
+    .card1 > img {
+      width: 500px;
+      height: 490px;
+      border-radius: 0;
+    }
+    
+    .card2 > img {
+      width: 500px;
+      height: 490px;
+      border-radius: 0;
+    }
+    
+    .card3 > img {
+      width: 500px;
+      height: 490px;
+      border-radius: 0;
+    }
+    
+    .card4 > img {
+      width: 500px;
+      height: 490px;
+      border-radius: 0;
+    }
+
+    .card1-text {
+      font-size: 35px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 30px;
+    }
+
+    .card2-text {
+      font-size: 35px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 30px;
+    }
+
+    .card3-text {
+      font-size: 35px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 30px;
+    }
+
+    .card4-text {
+      font-size: 35px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 30px;
+    }
+    
+    
+    .carousel-arrow-container {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-top: 20px;
+      margin-right: 20px;
+      gap: 10px;
+    }
+    
+    .carousel-arrow {
+      position: relative;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      background-color: #707070;
+      color: black;
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      font-size: 30px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .carousel-arrow:hover {
+      background-color: rgb(88, 88, 88);
+    }
+    
+    .carousel-arrow > svg {
+      width: 40px;
+      height: 40px;
+      fill: white;
+    }
+    }
+
+  @media (max-width: 768px) {
+    .card {
+      width: 100%;
+      height: 100vh;
+    }
+    
+    .carousel-container {
+      width: 95%;
+      height: 90vh;
+    }
+    
+    .carousel {
+      margin-top: 130px;
+    }
+    
+    .card1 {
+      width: 400px;
+      height: 390px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    
+    .card2 {
+      width: 400px;
+      height: 390px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+    .card3 {
+      width: 400px;
+      height: 390px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+    .card4 {
+      width: 400px;
+      height: 390px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+        
+    .card1 > img {
+      width: 400px;
+      height: 390px;
+      border-radius: 0;
+    }
+    
+    .card2 > img {
+      width: 400px;
+      height: 390px;
+      border-radius: 0;
+    }
+    
+    .card3 > img {
+      width: 400px;
+      height: 390px;
+      border-radius: 0;
+    }
+    
+    .card4 > img {
+      width: 400px;
+      height: 390px;
+      border-radius: 0;
+    }
+
+    .card1-text {
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 30px;
+    }
+
+    .card2-text {
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 30px;
+    }
+
+    .card3-text {
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 30px;
+    }
+
+    .card4-text {
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 30px;
+    }
+    
+    
+    .carousel-arrow-container {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-top: 20px;
+      margin-right: 20px;
+      gap: 10px;
+    }
+    
+    .carousel-arrow {
+      position: relative;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      background-color: #707070;
+      color: black;
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      font-size: 30px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .carousel-arrow:hover {
+      background-color: rgb(88, 88, 88);
+    }
+    
+    .carousel-arrow > svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+    }
+    }
+
+  @media (max-width: 480px) {
+    .card {
+      width: 100%;
+      height: 100vh;
+    }
+    
+    .carousel-container {
+      width: 95%;
+      height: 90vh;
+    }
+    
+    .carousel {
+      margin-top: 130px;
+    }
+    
+    .card1 {
+      width: 300px;
+      height: 290px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    
+    .card2 {
+      width: 300px;
+      height: 290px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+    .card3 {
+      width: 300px;
+      height: 290px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+    .card4 {
+      width: 300px;
+      height: 290px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+        
+    .card1 > img {
+      width: 300px;
+      height: 290px;
+      border-radius: 0;
+    }
+    
+    .card2 > img {
+      width: 300px;
+      height: 290px;
+      border-radius: 0;
+    }
+    
+    .card3 > img {
+      width: 300px;
+      height: 290px;
+      border-radius: 0;
+    }
+    
+    .card4 > img {
+      width: 300px;
+      height: 290px;
+      border-radius: 0;
+    }
+
+    .card1-text {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 30px;
+    }
+
+    .card2-text {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 30px;
+    }
+
+    .card3-text {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 30px;
+    }
+
+    .card4-text {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 30px;
+    }
+    
+    
+    .carousel-arrow-container {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-top: 20px;
+      margin-right: 20px;
+      gap: 10px;
+    }
+    
+    .carousel-arrow {
+      position: relative;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      background-color: #707070;
+      color: black;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      font-size: 30px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .carousel-arrow:hover {
+      background-color: rgb(88, 88, 88);
+    }
+    
+    .carousel-arrow > svg {
+      width: 25px;
+      height: 25px;
+      fill: white;
+    }
+    }
+
+  @media (max-width: 375px) {
+    .card {
+      width: 100%;
+      height: 100vh;
+    }
+    
+    .carousel-container {
+      width: 95%;
+      height: 90vh;
+    }
+    
+    .carousel {
+      margin-top: 130px;
+    }
+    
+    .card1 {
+      width: 300px;
+      height: 290px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    
+    .card2 {
+      width: 300px;
+      height: 290px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+    .card3 {
+      width: 300px;
+      height: 290px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+    .card4 {
+      width: 300px;
+      height: 290px;
+      background-color: transparent;
+      color: white;
+      margin-right: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    
+        
+    .card1 > img {
+      width: 300px;
+      height: 290px;
+      border-radius: 0;
+    }
+    
+    .card2 > img {
+      width: 300px;
+      height: 290px;
+      border-radius: 0;
+    }
+    
+    .card3 > img {
+      width: 300px;
+      height: 290px;
+      border-radius: 0;
+    }
+    
+    .card4 > img {
+      width: 300px;
+      height: 290px;
+      border-radius: 0;
+    }
+
+    .card1-text {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 30px;
+    }
+
+    .card2-text {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 30px;
+    }
+
+    .card3-text {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 30px;
+    }
+
+    .card4-text {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 0.2;
+      margin-top: 30px;
+    }
+    
+    
+    .carousel-arrow-container {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-top: 20px;
+      margin-right: 20px;
+      gap: 10px;
+    }
+    
+    .carousel-arrow {
+      position: relative;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      background-color: #707070;
+      color: black;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      font-size: 30px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .carousel-arrow:hover {
+      background-color: rgb(88, 88, 88);
+    }
+    
+    .carousel-arrow > svg {
+      width: 25px;
+      height: 25px;
+      fill: white;
+    }
+    }
+    
+/*KARUSEL------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*KONTAKT------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.kontakt {
+  width: 100%;
+  height: 100vh;
+  background-color: #efefef;
+  display: flex; 
+}
+
+.desna-strana {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.leva-strana {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+.kontaktirajteme{
+  font-size: 80px;
+}
+
+.email{
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.emailime {
+  color: #0071e3;
+}
+
+.polaroid {
+  rotate: 10deg;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.polaroid img {
+  width: 50%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;
+  margin-left: 250px;
+}
+
+@media (max-width: 2560px) {
+
+  .leva-strana, .desna-strana {
+    width: 100%;
+    height: 100vh; 
+  }
+
+  .kontaktirajteme{
+    font-size: 120px;
+  }
+  
+  .email{
+    font-size: 60px;
+    font-weight: 500;
+  }
+
+  .polaroid {
+    rotate: 5deg;
+    max-width: 90%;
+    max-height: 150%;
+    overflow: hidden;
+  }
+
+  .polaroid img {
+    width: 60%;
+    margin-left: 150px;
+  }
+}
+
+@media (max-width: 1920px) {
+
+  .leva-strana, .desna-strana {
+    width: 100%;
+    height: 100vh; 
+  }
+
+  .kontaktirajteme{
+    font-size: 90px;
+  }
+  
+  .email{
+    font-size: 45px;
+    font-weight: 500;
+  }
+
+  .polaroid {
+    rotate: 5deg;
+    max-width: 90%;
+    max-height: 150%;
+    overflow: hidden;
+  }
+
+  .polaroid img {
+    width: 60%;
+    margin-left: 150px;
+  }
+}
+
+@media (max-width: 1366px) {
+
+  .leva-strana, .desna-strana {
+    width: 100%;
+    height: 100vh; 
+  }
+
+  .kontaktirajteme{
+    font-size: 70px;
+  }
+  
+  .email{
+    font-size: 35px;
+    font-weight: 500;
+  }
+
+  .polaroid {
+    rotate: 5deg;
+    max-width: 90%;
+    max-height: 150%;
+    overflow: hidden;
+  }
+
+  .polaroid img {
+    width: 60%;
+    margin-left: 150px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .kontakt {
+    flex-direction: column;
+  }
+
+  .leva-strana, .desna-strana {
+    width: 100%;
+    height: 100vh; 
+  }
+
+  .kontaktirajteme{
+    font-size: 90px;
+  }
+  
+  .email{
+    font-size: 45px;
+    font-weight: 500;
+  }
+
+  .polaroid {
+    rotate: 5deg;
+    max-width: 90%;
+    max-height: 150%;
+    overflow: hidden;
+    margin-top: -250px;
+  }
+
+  .polaroid img {
+    width: 60%;
+    margin-left: 150px;
+  }
+}
+
+@media (max-width: 820px) {
+  .kontakt {
+    flex-direction: column;
+  }
+
+  .leva-strana, .desna-strana {
+    width: 100%;
+    height: 100vh; 
+  }
+
+  .kontaktirajteme{
+    font-size: 75px;
+  }
+  
+  .email{
+    font-size: 37.5px;
+    font-weight: 500;
+  }
+
+  .polaroid {
+    rotate: 5deg;
+    max-width: 90%;
+    max-height: 150%;
+    overflow: hidden;
+    margin-top: -250px;
+  }
+
+  .polaroid img {
+    width: 55%;
+    margin-left: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .kontakt {
+    flex-direction: column;
+  }
+
+  .leva-strana, .desna-strana {
+    width: 100%;
+    height: 100vh; 
+  }
+
+  .kontaktirajteme{
+    font-size: 70px;
+  }
+  
+  .email{
+    font-size: 35px;
+    font-weight: 500;
+  }
+
+  .polaroid {
+    rotate: 5deg;
+    max-width: 90%;
+    max-height: 150%;
+    overflow: hidden;
+    margin-top: -250px;
+  }
+
+  .polaroid img {
+    width: 55%;
+    margin-left: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kontakt {
+    flex-direction: column;
+  }
+
+  .leva-strana, .desna-strana {
+    width: 100%;
+    height: 50vh; 
+  }
+
+  .kontaktirajteme{
+    font-size: 50px;
+  }
+  
+  .email{
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  .polaroid {
+    rotate: 5deg;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: hidden;
+    margin-top: -250px;
+  }
+
+  .polaroid img {
+    width: 65%;
+    margin-left: 70px;
+  }
+}
+
+@media (max-width: 375px) {
+  .kontakt {
+    flex-direction: column;
+  }
+
+  .leva-strana, .desna-strana {
+    width: 100%;
+    height: 50vh; 
+  }
+
+  .kontaktirajteme{
+    font-size: 40px;
+  }
+  
+  .email{
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .polaroid {
+    rotate: 5deg;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: hidden;
+    margin-top: -250px;
+  }
+
+  .polaroid img {
+    width: 60%;
+    margin-left: 70px;
+  }
+}
+
+/*KONTAKT------------------------------------------------------------------------------------------------------------------------------------------------------------*/
